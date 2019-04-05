@@ -29,18 +29,29 @@ Setting the color of the background of the app.
 ## Pages
 
 ### Login
-
+Cooper
+TODO: Write Description
 
 ### Sign Up
-
+Cooper
+TODO: Write Description
 
 ### Profile
-
+Cooper
+TODO: Write Description
 
 ### Map
-
+Mallory
+TODO: Write Description
 
 ### Details Page
-
+Mallory
+TODO: Write Description
 
 ### Write Review
+Mallory
+TODO: Write Description
+
+### Settings
+Cooper
+TODO: Write Description
