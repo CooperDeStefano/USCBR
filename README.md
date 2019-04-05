@@ -25,3 +25,22 @@ Creating a profile page with your name and pronouns
 Uploading a profile picture
 
 Setting the color of the background of the app.
+
+## Pages
+
+### Login
+
+
+### Sign Up
+
+
+### Profile
+
+
+### Map
+
+
+### Details Page
+
+
+### Write Review
