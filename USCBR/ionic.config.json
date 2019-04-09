@@ -1,5 +1,7 @@
 {
   "name": "USCBR",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
