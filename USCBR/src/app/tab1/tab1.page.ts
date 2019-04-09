@@ -1,4 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { 
+  GoogleMaps,
+  GoogleMap,
+  GoogleMapsEvent,
+  ILatLng,
+  Marker,
+  BaseArrayClass
+} from '@ionic-native/google-maps'
 
 @Component({
   selector: 'app-tab1',
