@@ -10,6 +10,8 @@ Abstract: This app is to help trans and non-binary identified USC students and a
 
 Background: There are existing gender-neutral bathroom map apps, but none that are specific to our campus. The ones that do exist only list 3 of the ones on campus, rather than the 75 that are listed by the OMSA website.
 
+The data we will be using for the map can be found here: https://sc.edu/about/offices_and_divisions/multicultural_student_affairs/student-support/lgbtq_resources/index.php
+
 Functionalities:
 
 Logging in with an email and password
