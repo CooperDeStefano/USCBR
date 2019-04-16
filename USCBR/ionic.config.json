@@ -1,0 +1,7 @@
+{
+  "name": "USCBR",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
