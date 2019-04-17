@@ -12,8 +12,8 @@ export class Tab2Page {
     private router: Router
   ) { }
 
-  toLogin(){
-    this.router.navigate(['/login']);
+  signOut(){
+    this.router.navigate(['']);
   }
   toSignUp(){
     this.router.navigate(['/signup']);

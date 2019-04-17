@@ -11,7 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  public rootPage: any;
+  rootPage:any = 'login';
   
   constructor(
     private platform: Platform,

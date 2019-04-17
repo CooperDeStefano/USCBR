@@ -1,14 +1,39 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Profile
     </ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)=toLogin()>Login Page</ion-button>
-  <ion-button (click)=toSignUp()>Sign Up Page</ion-button>
-  <ion-button (click)=toProfile()>Profile Page</ion-button>
-  <ion-button (click)=toSettings()>Settings Page</ion-button>
+  <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-text>Cooper</ion-text>
+  </ion-item>
+  <ion-item>
+      <ion-label>Pronouns</ion-label>
+      <ion-text>He/Him, They/Them</ion-text>
+  </ion-item>
+  <div class="center">
+      <ion-button (click)=toSettings()>Settings Page</ion-button>
+      <ion-button (click)=signOut()>Sign Out</ion-button>
+  </div>
 </ion-content>
+
+<ion-tabs>
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button>
+          <ion-icon name="locate"></ion-icon>
+          <ion-label>Map</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button>
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+</ion-tabs>

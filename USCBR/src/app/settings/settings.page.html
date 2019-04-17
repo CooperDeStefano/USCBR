@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>settings</ion-title>
+    <ion-title>Settings</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -17,5 +20,15 @@
         <ion-select-option>They/Them</ion-select-option>
       </ion-select>
   </ion-item>
-  <ion-button (click)=toProfile()>Profile Page</ion-button>
+  <ion-item>
+      <ion-label>Change Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Confirm Password</ion-label>
+        <ion-input type="password"></ion-input>
+    </ion-item>
+    <div class="center">
+        <ion-button (click)=toProfile() class="center">Change Password</ion-button>
+    </div>
 </ion-content>

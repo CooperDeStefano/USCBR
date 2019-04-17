@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-title>Sign Up</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,5 +16,5 @@
           <ion-label>Password</ion-label>
           <ion-input type="password"></ion-input>
       </ion-item>
-      <ion-button (click)=toProfile()>Sign Up</ion-button>
+      <ion-button (click)=toProfile() class="center">Sign Up</ion-button>
 </ion-content>

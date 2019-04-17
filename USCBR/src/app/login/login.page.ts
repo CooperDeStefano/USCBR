@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage  {
 
   constructor(
     private router: Router
@@ -15,8 +15,13 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  signIn() {
+    console.log('Logged in successfully');
+
+  }
+
   toProfile(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/tab2']);
   }
   toSignUp(){
     this.router.navigate(['/signup']);
