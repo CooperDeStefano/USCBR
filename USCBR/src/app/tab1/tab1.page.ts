@@ -1,6 +1,6 @@
 
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterContentInit, ElementRef } from '@angular/core';
 import { ItemService } from '../item.service';
 import { Observable } from 'rxjs';
 import {
@@ -16,7 +16,10 @@ import {
   GoogleMapsAnimation,
   MyLocation
 } from '@ionic-native/google-maps';
+import { rootRenderNodes } from '@angular/core/src/view';
 
+
+declare var google;
 
 @Component({
   selector: 'app-tab1',
@@ -24,6 +27,7 @@ import {
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit{
+  @ViewChild('map') mapContainer: ElementRef;
   roomsObservable:Observable<any[]>;
   rooms:Array<any>=[];
   map: GoogleMap;
@@ -40,20 +44,21 @@ export class Tab1Page implements OnInit{
     this.router.navigate(['/login']);
   }
 
-  async ngOnInit() {
+ async ngOnInit() {
     // Since ngOnInit() is executed before `deviceready` event,
     // you have to wait the event.
-    this.roomsObservable = this.itemService.getRooms();
-    console.log('imported items');
-    this.roomsObservable.subscribe(rooms => {
-      this.rooms = rooms;
-    })
-    console.log('item: ' + this.rooms.values);
-    if(this.rooms != undefined) {
-      console.log('There are ' + this.rooms.length + ' items in menu.');
-    }
-    await this.platform.ready();
-    await this.loadMap();
+    
+   await this.platform.ready();
+   //await this.loadRooms();
+   await this.loadMap();
+   
+  }
+
+  
+
+  loadRooms(){
+
+    
   }
 
   roomDetailPage(room) {
@@ -65,13 +70,46 @@ export class Tab1Page implements OnInit{
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
         target: {
-          lat: 43.0741704,
-          lng: -89.3809802
+          lat: 33.996041,
+          lng: -81.027363
         },
-        zoom: 18,
+        zoom: 15,
         tilt: 30
       }
     });
+    this.roomsObservable = this.itemService.getRooms();
+      console.log('imported items');
+      this.roomsObservable.subscribe(rooms => {
+        this.rooms = rooms;
+        console.log(this.rooms.length);
+
+        console.log("starting  marker");
+    for ( let i = 0; i < this.rooms.length; i++){
+      console.log("generated marker #" + i);
+      console.log(this.rooms[i].latlong);
+      let marker: Marker = this.map.addMarkerSync({
+          title: this.rooms[i].address,
+          position: {lat:this.rooms[i].latlong._lat, lng:this.rooms[i].latlong._long}
+          //animation: GoogleMapsAnimation.BOUNCE
+        });
+
+
+    }
+      })
+      //console.log('item: ' + this.rooms.values);
+      if(this.rooms != undefined) {
+        console.log('There are ' + this.rooms.length + ' items in menu.');
+      }
+      // // add a marker
+      // let marker: Marker = this.map.addMarkerSync({
+      //   title: this.rooms[0].address,
+      //   position: this.rooms[0].latlong,
+      //   //animation: GoogleMapsAnimation.BOUNCE
+      // });
+
+
+    
+    
 
   }
 
@@ -95,21 +133,21 @@ export class Tab1Page implements OnInit{
         tilt: 30
       });
 
-      // add a marker
-      let marker: Marker = this.map.addMarkerSync({
-        title: '@ionic-native/google-maps plugin!',
-        snippet: 'This plugin is awesome!',
-        position: location.latLng,
-        animation: GoogleMapsAnimation.BOUNCE
-      });
+      // // add a marker
+      // let marker: Marker = this.map.addMarkerSync({
+      //   title: '@ionic-native/google-maps plugin!',
+      //   snippet: 'This plugin is awesome!',
+      //   position: location.latLng,
+      //   animation: GoogleMapsAnimation.BOUNCE
+      // });
 
-      // show the infoWindow
-      marker.showInfoWindow();
+      // // show the infoWindow
+      // marker.showInfoWindow();
 
-      // If clicked it, display the alert
-      marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-        this.showToast('clicked!');
-      });
+      // // If clicked it, display the alert
+      // marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
+      //   this.showToast('clicked!');
+      // });
     })
     .catch(err => {
       this.loading.dismiss();
