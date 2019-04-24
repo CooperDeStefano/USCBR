@@ -9,16 +9,15 @@
 </ion-header>
 
 <ion-content padding>
-  <div>
-    <h3>400 Main</h3>
-    <div>
-      <ion-label>
-        <i>Description: Single Stall</i>
-        <br /> 
-        <i>Location: 400 Main, 2nd Floor, Room 212A</i>
-        <br /> 
-        <b>Average Rating</b> ****
-      </ion-label>
-    </div>
-  </div>  
+    <div *ngIf="current_room">
+          <h3>{{ current_room.address }}</h3>
+          <div>
+            <ion-label>
+              <i> Description: {{ current_room.type }}</i>
+              <br /> 
+              <b>Location: </b> {{current_room.address}}, {{current_room.floor}}
+            </ion-label>
+          </div>
+    </div>  
+  
 </ion-content>
