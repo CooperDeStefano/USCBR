@@ -63,7 +63,7 @@ export class Tab1Page implements OnInit{
 
   roomDetailPage(room) {
     console.log('Item detail: ' + room);
-  	this.router.navigate(["/details", room]);
+  	this.router.navigate(["/details", {data:JSON.stringify(room)}]);
   }
 
   loadMap() {
@@ -81,12 +81,12 @@ export class Tab1Page implements OnInit{
       console.log('imported items');
       this.roomsObservable.subscribe(rooms => {
         this.rooms = rooms;
-        console.log(this.rooms.length);
+        console.log(this.rooms[0]);
 
-        console.log("starting  marker");
+        //console.log("starting  marker");
     for ( let i = 0; i < this.rooms.length; i++){
-      console.log("generated marker #" + i);
-      console.log(this.rooms[i].latlong);
+      //console.log("generated marker #" + i);
+      //console.log(this.rooms[i].latlong);
       let marker: Marker = this.map.addMarkerSync({
           title: this.rooms[i].address,
           position: {lat:this.rooms[i].latlong._lat, lng:this.rooms[i].latlong._long}
