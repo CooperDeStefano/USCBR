@@ -16,7 +16,7 @@ export class SettingsPage implements OnInit {
   }
 
   toProfile(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/tab2']);
   }
 
 }

@@ -1,4 +1,4 @@
-
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild,AfterContentInit, ElementRef } from '@angular/core';
 import { ItemService } from '../item.service';
@@ -18,7 +18,6 @@ import {
 } from '@ionic-native/google-maps';
 import { rootRenderNodes } from '@angular/core/src/view';
 
-
 declare var google;
 
 @Component({
@@ -26,6 +25,7 @@ declare var google;
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
 export class Tab1Page implements OnInit{
   @ViewChild('map') mapContainer: ElementRef;
   roomsObservable:Observable<any[]>;
@@ -33,16 +33,15 @@ export class Tab1Page implements OnInit{
   map: GoogleMap;
   loading: any;
 
+
   constructor(
-    public loadingCtrl: LoadingController,
-    private router: Router,
-    public toastCtrl: ToastController,
-    public itemService: ItemService,
-    private platform: Platform) { }
+    private router: Router
+  ) { }
 
   loginAtStart(){
     this.router.navigate(['/login']);
   }
+
 
  async ngOnInit() {
     // Since ngOnInit() is executed before `deviceready` event,
@@ -169,4 +168,3 @@ export class Tab1Page implements OnInit{
 
 
 }
-

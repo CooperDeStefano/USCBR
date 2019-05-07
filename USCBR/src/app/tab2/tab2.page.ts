@@ -12,14 +12,14 @@ export class Tab2Page {
     private router: Router
   ) { }
 
-  toLogin(){
-    this.router.navigate(['/login']);
+  signOut(){
+    this.router.navigate(['']);
   }
   toSignUp(){
     this.router.navigate(['/signup']);
   }
   toProfile(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/tab2']);
   }
   toSettings(){
     this.router.navigate(['/settings']);

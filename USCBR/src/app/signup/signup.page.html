@@ -1,17 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-title>Sign Up</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form [formGroup] = "new_user_form" (ngSubmit) = "createNewUser(new_user_form.value)">
     <ion-item>
-        <ion-label>Username or Email</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label>Password</ion-label>
-          <ion-input type="password"></ion-input>
-      </ion-item>
-      <ion-button (click)=toProfile()>Sign Up</ion-button>
+      <ion-label color="primary" position="floating">Username: </ion-label>
+      <ion-input type="text" formControlName="username" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="floating">Password</ion-label>
+      <ion-input type = "text" formControlName = "password" required></ion-input>
+    </ion-item>
+    <ion-button class = "submit-btn" expand="block" type="submit" [disabled]="!new_user_form.valid">Sign Up</ion-button>
+  </form>
 </ion-content>
