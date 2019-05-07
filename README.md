@@ -28,6 +28,24 @@ Uploading a profile picture
 
 Setting the color of the background of the app.
 
+## Run commands 
+
+npm install @ionic/storage
+
+ionic cordova plugin add cordova-plugin-firebase
+
+npm install @ionic-native/firebase
+
+ionic cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="..." --variable API_KEY_FOR_IOS="..."
+
+npm install @ionic-native/core @ionic-native/google-maps
+
+ionic cordova plugin add cordova-plugin-geolocation
+
+npm install @ionic-native/geolocation
+
+ionic serve
+
 ## Pages
 
 ### Login
