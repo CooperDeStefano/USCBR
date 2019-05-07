@@ -26,13 +26,13 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      Environment.setEnv({
-        // api key for server
-        'API_KEY_FOR_BROWSER_RELEASE': '(AIzaSyCS5zaV-WWGa5dYewzy0p7HSL28WU3Bv_M)',
+      // Environment.setEnv({
+      //   // api key for server
+      //   'API_KEY_FOR_BROWSER_RELEASE': '(AIzaSyD46JZWMlxmENk30qLTA6CB93jWp0ZLrfE)',
 
-        // api key for local development
-        'API_KEY_FOR_BROWSER_DEBUG': '(AIzaSyCS5zaV-WWGa5dYewzy0p7HSL28WU3Bv_M)'
-      });
+      //   // api key for local development
+      //   'API_KEY_FOR_BROWSER_DEBUG': '(AIzaSyD46JZWMlxmENk30qLTA6CB93jWp0ZLrfE)'
+      // });
       this.statusBar.hide();
       this.splashScreen.hide();
       this.rootPage = LoginPage;
