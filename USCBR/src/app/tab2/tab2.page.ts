@@ -19,7 +19,7 @@ export class Tab2Page {
     this.router.navigate(['/signup']);
   }
   toProfile(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/tab2']);
   }
   toSettings(){
     this.router.navigate(['/settings']);

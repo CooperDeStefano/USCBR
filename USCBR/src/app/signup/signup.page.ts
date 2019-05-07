@@ -30,7 +30,7 @@ export class SignupPage implements OnInit {
     this.itemService.createUser(value);
     //go to tabs screen
     console.log("going to profile")
-    this.router.navigate(['/tab2']);
+    this.router.navigate(['']);
   }
 
 }
