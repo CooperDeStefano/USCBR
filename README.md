@@ -24,10 +24,6 @@ Being able to review bathrooms on campus
 
 Creating a profile page with your name and pronouns
 
-Uploading a profile picture
-
-Setting the color of the background of the app.
-
 ## Run commands 
 
 npm install @ionic/storage
@@ -44,34 +40,14 @@ ionic cordova plugin add cordova-plugin-geolocation
 
 npm install @ionic-native/geolocation
 
+npm install @angular/fire
+
+npm install firebase
+
+npm install firebase angularfire2
+
+npm install -g firebase-tools
+
+npm i @types/mocha
+
 ionic serve
-
-## Pages
-
-### Login
-Cooper
-TODO: Write Description
-
-### Sign Up
-Cooper
-TODO: Write Description
-
-### Profile
-Cooper
-TODO: Write Description
-
-### Map
-Mallory
-TODO: Write Description
-
-### Details Page
-Mallory
-TODO: Write Description
-
-### Write Review
-Mallory
-TODO: Write Description
-
-### Settings
-Cooper
-TODO: Write Description
